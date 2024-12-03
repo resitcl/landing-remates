@@ -37,6 +37,68 @@ app.bg = {
   }
 };
 
+app.calculator = {
+  init: function() {
+    var form, resultado, resultadoPesos, resultadoUF, ufValue, valorUFElement;
+    console.log("init calculator");
+    form = document.getElementById('calculatorForm');
+    resultado = document.getElementById('resultado');
+    resultadoPesos = document.getElementById('resultadoPesos');
+    resultadoUF = document.getElementById('resultadoUF');
+    valorUFElement = document.getElementById('valorUF');
+    ufValue = null;
+    console.log(form);
+    fetch('https://mindicador.cl/api/uf').then(function(response) {
+      return response.json();
+    }).then(function(data) {
+      ufValue = data.serie[0].valor;
+      return valorUFElement.textContent = "Valor UF utilizado: $" + (ufValue.toFixed(2));
+    })["catch"](function(error) {
+      console.error('Error fetching UF value:', error);
+      ufValue = 35000;
+      return valorUFElement.textContent = "Valor UF utilizado: $" + (ufValue.toFixed(2)) + " (valor de respaldo)";
+    });
+    form.addEventListener('submit', function(e) {
+      var cantidadCanales, cantidadRemates, costo1, costo2, numeroParticipantes, precioFinalPesos, precioFinalUF, valor1, valor2;
+      console.log("Submit calculator");
+      e.preventDefault();
+      if (!ufValue) {
+        alert('El valor de la UF aún no está disponible. Por favor, intente de nuevo en unos segundos.');
+      }
+      cantidadRemates = parseFloat(document.getElementById('cantidadRemates').value);
+      cantidadCanales = parseFloat(document.getElementById('cantidadCanales').value);
+      numeroParticipantes = parseFloat(document.getElementById('numeroParticipantes').value);
+      if (!(cantidadRemates && cantidadCanales && numeroParticipantes)) {
+        alert('Por favor, rellene todos los campos requeridos.');
+      }
+      costo1 = 18000 * cantidadRemates + 50000 * cantidadCanales + 1200 * numeroParticipantes * Math.log10(numeroParticipantes);
+      costo2 = (cantidadRemates / 3) * 38000;
+      valor1 = (30 / 100 + 1) * costo1 + costo2;
+      valor2 = valor1 + (1000000 * (30 / 100 + 1));
+      precioFinalPesos = Math.median([valor1, valor2]);
+      precioFinalUF = precioFinalPesos / ufValue;
+      resultadoPesos.textContent = "$" + (precioFinalPesos.toFixed(2)) + " + IVA";
+      resultadoUF.textContent = (precioFinalUF.toFixed(2)) + " UF + IVA";
+      return resultado.classList.remove('hidden');
+    });
+    return Math.median = function(values) {
+      var half;
+      if (values.length === 0) {
+        return 0;
+      }
+      values.sort(function(a, b) {
+        return a - b;
+      });
+      half = Math.floor(values.length / 2);
+      if (values.length % 2) {
+        return values[half];
+      } else {
+        return (values[half - 1] + values[half]) / 2.0;
+      }
+    };
+  }
+};
+
 app.common = {
   init: function() {
     return console.log("hola mundo");

@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <link href="img/favicon.png" rel="shortcut icon">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href="css/main.css?v=49164" rel="stylesheet" type="text/css">
-    <script src="js/main.js?v=49164" type="text/javascript"></script>
+    <link href="css/main.css?v=54090" rel="stylesheet" type="text/css">
+    <script src="js/main.js?v=54090" type="text/javascript"></script>
     <!-- Meta tags facebook-->
     <meta property="og:title" content="#">
     <meta property="og:description" content="#">
@@ -117,10 +117,8 @@
               <div class="section__flex">
                 <div class="col-md-5 dscroll">   
                   <div class="section__content">
-                    <h3 class="h2 section__title">Aenean a nisl a duis vehicula
-                    </h3>
-                    <p class="section__description">Adipiscing pellentesque praesent dictumst ullamcorper tincidunt in aliquam sociosqu feugiat. Lobortis leo consequat laoreet adipiscing diam ut sodales dapibus vehicula vivamus scelerisque lectus bibendum inceptos.
-                    </p>
+                    <h3 class="h2 section__title">Reglas específicas de remate</h3>
+                    <p class="section__description">Nuestro software permite configurar reglas personalizadas para cada remate, adaptándose a las necesidades de cada institución o cliente. Desde restricciones de participación hasta condiciones de pago y entrega, puedes establecer parámetros precisos que aseguren la transparencia y el cumplimiento normativo en cada subasta.</p>
                   </div>
                 </div>
                 <div class="col-md-7 dscroll"> 
@@ -140,10 +138,8 @@
               <div class="section__flex">
                 <div class="col-md-5 col-md-push-7 dscroll"> 
                   <div class="section__content">
-                    <h3 class="h2 section__title">Eleifend pulvinar tempor ultricies fringilla est
-                    </h3>
-                    <p class="section__description">Porttitor auctor curabitur ut nisl feugiat placerat semper donec senectus. Duis varius quam curabitur ornare mi fermentum tristique cursus pretium congue taciti arcu phasellus gravida.
-                    </p>
+                    <h3 class="h2 section__title">Transmisión masiva de usuarios</h3>
+                    <p class="section__description">Diseñado para soportar altos volúmenes de participantes, nuestro sistema garantiza una experiencia fluida y sin interrupciones, incluso durante remates con miles de usuarios conectados simultáneamente. Esto asegura que cada participante pueda pujar en tiempo real sin problemas técnicos, independientemente de la demanda.</p>
                   </div>
                 </div>
                 <div class="col-md-7 col-md-pull-5 dscroll"> 
@@ -163,10 +159,8 @@
               <div class="section__flex">
                 <div class="col-md-5 dscroll">    
                   <div class="section__content">
-                    <h3 class="h2 section__title">Nibh bibendum litora viverra fringilla quisque
-                    </h3>
-                    <p class="section__description">Semper sapien placerat elit eu aliquam orci sociosqu sem taciti. Cras vel fames aliquam nisl phasellus erat risus nullam tempor class tristique consequat feugiat lectus.
-                    </p>
+                    <h3 class="h2 section__title">Remates simultáneos</h3>
+                    <p class="section__description">Gestiona múltiples remates al mismo tiempo con total eficiencia. Nuestro software permite coordinar y supervisar varias subastas en paralelo, asegurando una administración centralizada y simplificada que maximiza el rendimiento de las operaciones.</p>
                   </div>
                 </div>
                 <div class="col-md-7 dscroll"> 
@@ -302,7 +296,64 @@
           </div>
         </div>
       </section>
-      <section class="section--integrations">
+      <section class="section--calculator"> 
+        <div class="section__wrap section--sm">
+          <div class="section__header">
+            <h3 class="section__title">Calculadora de Precios</h3>
+            <p>Calcula el precio para tu plataforma de remates</p>
+          </div>
+          <div class="section__body">
+            <div class="card">
+              <div class="card-content">
+                <form id="calculatorForm" class="form">
+                  <div class="cols">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="cantidadRemates">Cantidad de remates</label>
+                        <input id="cantidadRemates" type="number" name="cantidadRemates" required min="0">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="cantidadCanales">Cantidad de canales simultáneos</label>
+                        <input id="cantidadCanales" type="number" name="cantidadCanales" required min="0">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="numeroParticipantes">Número de participantes</label>
+                        <input id="numeroParticipantes" type="number" name="numeroParticipantes" required min="0">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="numeroUsuarios">Número de usuarios en la plataforma</label>
+                        <input id="numeroUsuarios" type="number" name="numeroUsuarios" min="0">
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group full-width">
+                        <label for="cantidadLotes">Cantidad máxima de lotes a rematar</label>
+                        <input id="cantidadLotes" type="number" name="cantidadLotes" min="0">
+                      </div>
+                    </div>
+                  </div>
+                  <button type="submit" class="button">Calcular Precio</button>
+                </form>
+                <div id="resultado" class="resultado hidden">
+                  <h3>Resultado del cálculo:</h3>
+                  <div class="resultado-valores">
+                    <p id="resultadoPesos" class="resultado-pesos"></p>
+                    <p id="resultadoUF" class="resultado-uf"></p>
+                  </div>
+                  <p id="valorUF" class="valor-uf"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section--integrations section--white">
         <div class="section__wrap section--sm">
           <div class="section__header">
             <h3 class="section__title">Integración API</h3>
@@ -351,7 +402,7 @@
           </div>
         </div>
       </section>
-      <section class="section--plans section--white">
+      <section class="section--plans">
         <div class="section__wrap section--md">
           <div class="section__header"> 
             <h3 class="section__title">Activa el potencial de tu negocio</h3>
@@ -364,13 +415,15 @@
                   <div class="article__header">
                     <div class="article__icon"><img src="img/icons/icon-plan-1.png"></div>
                     <h3 class="article__title">Básico</h3>
-                    <P class="article__price">$99 <span>/mes</span></P>
+                    <P class="article__price">7 UF  <span>+ IVA</span></P>
                   </div>
                   <div class="article__body">
                     <ul>
-                      <li class="check">Hasta 10 remates/mes</li>
-                      <li class="check">Hasta 100 lotes/mes</li>
-                      <li class="check">1 canal</li>
+                      <li class="check">Cantidad de remates: 3</li>
+                      <li class="check">Cantidad de canales simultáneos: 1</li>
+                      <li class="check">Número de participantes: 20</li>
+                      <li class="check">Número de usuarios en la plataforma: 2</li>
+                      <li class="check">Cantidad máxima de lotes a rematar: 10</li>
                     </ul>
                   </div>
                   <div class="article__footer"><a href="#" class="btn">Elegir plan</a></div>
@@ -381,13 +434,15 @@
                   <div class="article__header">
                     <div class="article__icon"><img src="img/icons/icon-plan-2.png"></div>
                     <h3 class="article__title">Pro</h3>
-                    <P class="article__price">$299 <span>/mes</span></P>
+                    <P class="article__price">20 UF  <span>+ IVA</span></P>
                   </div>
                   <div class="article__body">
                     <ul>
-                      <li class="check">Hasta 10 remates/mes</li>
-                      <li class="check">Hasta 100 lotes/mes</li>
-                      <li class="check">1 canal</li>
+                      <li class="check">Cantidad de remates: 10</li>
+                      <li class="check">Cantidad de canales simultáneos: 1</li>
+                      <li class="check">Número de participantes: 50</li>
+                      <li class="check">Número de usuarios en la plataforma: 10</li>
+                      <li class="check">Cantidad máxima de lotes a rematar: 50</li>
                     </ul>
                   </div>
                   <div class="article__footer"><a href="#" class="btn">Elegir plan</a></div>
@@ -398,13 +453,17 @@
                   <div class="article__header">
                     <div class="article__icon"><img src="img/icons/icon-plan-3.png"></div>
                     <h3 class="article__title">Enterprise</h3>
-                    <P class="article__price">$999 <span>/mes</span></P>
+                    <P class="article__price">65 UF  <span>+ IVA</span></P>
                   </div>
                   <div class="article__body">
                     <ul>
                       <li class="check">Hasta 10 remates/mes</li>
-                      <li class="check">Hasta 100 lotes/mes</li>
-                      <li class="check">1 canal</li>
+                      <li class="check">Cantidad de remates: 30</li>
+                      <li class="check">Cantidad de canales simultáneos: 1</li>
+                      <li class="check">Número de participantes: 200</li>
+                      <li class="check">Número de usuarios en la plataforma: 30</li>
+                      <li class="check">Cantidad máxima de lotes a rematar: 300</li>
+                      <li class="check">+ API</li>
                     </ul>
                   </div>
                   <div class="article__footer"><a href="#" class="btn">Elegir plan</a></div>
@@ -414,11 +473,11 @@
           </div>
         </div>
       </section>
-      <section class="section--features">
+      <section class="section--features section--white">
         <div class="section__wrap">
           <div class="section__header">
             <h3 class="section__title">Ventajas</h3>
-            <p>Sociosqu neque convallis urna porttitor erat nunc eros semper felis vehicula risus vestibulum odio nunc.
+            <p>Maecenas fames dictumst blandit sed rutrum habitant faucibus vitae consectetur rutrum id magna porta nullam.
             </p>
           </div>
           <div class="section__body">
@@ -463,105 +522,100 @@
           </div>
         </div>
       </section>
-      <section class="section--testimonies section--white">
-        <div class="section__wrap section--md">
-          <div class="section__header"> 
-            <h3 class="section__title">Testimonios</h3>
-          </div>
-          <div class="section__body">
-            <div class="cols">
-              <div class="col-md-6">
-                <article class="article--testimony">
-                  <div class="article__profile">
-                    <div class="article__avatar"> <img src="img/avatars/1.jpg"></div>
-                    <div class="article__profile__info">
-                      <h4 class="article__title">Nombre y apellido</h4>
-                      <p>IBM, Gerente Regional</p>
-                    </div>
-                  </div>
-                  <div class="article__testimony">
-                    <blockquote>Morbi vitae dui diam senectus pharetra congue viverra eros facilisis iaculis fermentum aliquam habitant eros in erat sem ut aptent.
-                    </blockquote>
-                    <div class="article__stars">
-                      <div class="article__star"><span class="fa fa-star"></span></div>
-                      <div class="article__star"><span class="fa fa-star"></span></div>
-                      <div class="article__star"><span class="fa fa-star"></span></div>
-                      <div class="article__star"><span class="fa fa-star"></span></div>
-                      <div class="article__star"><span class="fa fa-star"></span></div>
-                    </div>
-                  </div>
-                </article>
-              </div>
-              <div class="col-md-6">
-                <article class="article--testimony">
-                  <div class="article__profile">
-                    <div class="article__avatar"> <img src="img/avatars/2.jpg"></div>
-                    <div class="article__profile__info">
-                      <h4 class="article__title">Nombre y apellido</h4>
-                      <p>IBM, Gerente Regional</p>
-                    </div>
-                  </div>
-                  <div class="article__testimony">
-                    <blockquote>Odio neque tellus aliquam massa magna aliquet posuere non quisque massa lacinia himenaeos felis etiam pulvinar class magna eget nostra.
-                    </blockquote>
-                    <div class="article__stars">
-                      <div class="article__star"><span class="fa fa-star"></span></div>
-                      <div class="article__star"><span class="fa fa-star"></span></div>
-                      <div class="article__star"><span class="fa fa-star"></span></div>
-                      <div class="article__star"><span class="fa fa-star"></span></div>
-                      <div class="article__star"><span class="fa fa-star"></span></div>
-                    </div>
-                  </div>
-                </article>
-              </div>
-              <div class="col-md-6">
-                <article class="article--testimony">
-                  <div class="article__profile">
-                    <div class="article__avatar"> <img src="img/avatars/3.jpg"></div>
-                    <div class="article__profile__info">
-                      <h4 class="article__title">Nombre y apellido</h4>
-                      <p>IBM, Gerente Regional</p>
-                    </div>
-                  </div>
-                  <div class="article__testimony">
-                    <blockquote>Eu commodo dui sem mauris nullam fringilla tristique inceptos potenti ligula ultrices elit at tristique non habitant nam dictumst donec.
-                    </blockquote>
-                    <div class="article__stars">
-                      <div class="article__star"><span class="fa fa-star"></span></div>
-                      <div class="article__star"><span class="fa fa-star"></span></div>
-                      <div class="article__star"><span class="fa fa-star"></span></div>
-                      <div class="article__star"><span class="fa fa-star"></span></div>
-                      <div class="article__star"><span class="fa fa-star"></span></div>
-                    </div>
-                  </div>
-                </article>
-              </div>
-              <div class="col-md-6">
-                <article class="article--testimony">
-                  <div class="article__profile">
-                    <div class="article__avatar"> <img src="img/avatars/4.png"></div>
-                    <div class="article__profile__info">
-                      <h4 class="article__title">Nombre y apellido</h4>
-                      <p>IBM, Gerente Regional</p>
-                    </div>
-                  </div>
-                  <div class="article__testimony">
-                    <blockquote>Porta volutpat porta fringilla elementum aliquet elementum quisque curae nec ullamcorper gravida consectetur habitant cras litora torquent at suspendisse eget.
-                    </blockquote>
-                    <div class="article__stars">
-                      <div class="article__star"><span class="fa fa-star"></span></div>
-                      <div class="article__star"><span class="fa fa-star"></span></div>
-                      <div class="article__star"><span class="fa fa-star"></span></div>
-                      <div class="article__star"><span class="fa fa-star"></span></div>
-                      <div class="article__star"><span class="fa fa-star"></span></div>
-                    </div>
-                  </div>
-                </article>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <!--section.section--testimonies.section--white
+      .section__wrap.section--md
+      	.section__header 
+      		h3.section__title Testimonios
+      	
+      	.section__body
+      		.cols
+      			.col-md-6
+      				article.article--testimony
+      					.article__profile
+      						.article__avatar 
+      							img(src="img/avatars/1.jpg")
+      						.article__profile__info
+      							h4.article__title Nombre y apellido
+      							p IBM, Gerente Regional
+      					.article__testimony
+      						blockquote: +lorem(20)
+      						.article__stars
+      							.article__star
+      								span.fa.fa-star
+      							.article__star
+      								span.fa.fa-star
+      							.article__star
+      								span.fa.fa-star
+      							.article__star
+      								span.fa.fa-star
+      							.article__star
+      								span.fa.fa-star
+      			.col-md-6
+      				article.article--testimony
+      					.article__profile
+      						.article__avatar 
+      							img(src="img/avatars/2.jpg")
+      						.article__profile__info
+      							h4.article__title Nombre y apellido
+      							p IBM, Gerente Regional
+      					.article__testimony
+      						blockquote: +lorem(20)
+      						.article__stars
+      							.article__star
+      								span.fa.fa-star
+      							.article__star
+      								span.fa.fa-star
+      							.article__star
+      								span.fa.fa-star
+      							.article__star
+      								span.fa.fa-star
+      							.article__star
+      								span.fa.fa-star
+      			.col-md-6
+      				article.article--testimony
+      					.article__profile
+      						.article__avatar 
+      							img(src="img/avatars/3.jpg")
+      						.article__profile__info
+      							h4.article__title Nombre y apellido
+      							p IBM, Gerente Regional
+      					.article__testimony
+      						blockquote: +lorem(20)
+      						.article__stars
+      							.article__star
+      								span.fa.fa-star
+      							.article__star
+      								span.fa.fa-star
+      							.article__star
+      								span.fa.fa-star
+      							.article__star
+      								span.fa.fa-star
+      							.article__star
+      								span.fa.fa-star
+      			.col-md-6
+      				article.article--testimony
+      					.article__profile
+      						.article__avatar 
+      							img(src="img/avatars/4.png")
+      						.article__profile__info
+      							h4.article__title Nombre y apellido
+      							p IBM, Gerente Regional
+      					.article__testimony
+      						blockquote: +lorem(20)
+      						.article__stars
+      							.article__star
+      								span.fa.fa-star
+      							.article__star
+      								span.fa.fa-star
+      							.article__star
+      								span.fa.fa-star
+      							.article__star
+      								span.fa.fa-star
+      							.article__star
+      								span.fa.fa-star
+      
+      
+      -->
       <section class="section--clients">
         <div class="section__wrap section__wrap--md section__wrap--sm">
           <div class="section__header">
@@ -570,44 +624,19 @@
           <div class="section__body">
             <div class="section__clients">
               <div class="cols">
-                <div class="col-md-3">
+                <div class="col-md-4">
                   <div class="section__client">
                     <div class="section__icon"><a href="#"><img src="img/clients/1.png"></a></div>
                   </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                   <div class="section__client">
                     <div class="section__icon"><a href="#"><img src="img/clients/2.png"></a></div>
                   </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                   <div class="section__client">
                     <div class="section__icon"><a href="#"><img src="img/clients/3.png"></a></div>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="section__client">
-                    <div class="section__icon"><a href="#"><img src="img/clients/4.png"></a></div>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="section__client">
-                    <div class="section__icon"><a href="#"><img src="img/clients/4.png"></a></div>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="section__client">
-                    <div class="section__icon"><a href="#"><img src="img/clients/3.png"></a></div>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="section__client">
-                    <div class="section__icon"><a href="#"><img src="img/clients/2.png"></a></div>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="section__client">
-                    <div class="section__icon"><a href="#"><img src="img/clients/1.png"></a></div>
                   </div>
                 </div>
               </div>
@@ -615,68 +644,48 @@
           </div>
         </div>
       </section>
-      <section class="section--contact section--white">
-        <div class="section__wrap section--sm">
-          <div class="section__body">
-            <div class="section__content">
-              <h1 class="h2 section__title">Contáctanos</h1>
-              <p>Laoreet sem malesuada fusce faucibus nostra fringilla sodales iaculis suspendisse faucibus dictumst euismod purus vel.
-              </p>
-              <div class="section__form"> 
-                <form action="#">
-                  <div class="cols">
-                    <div class="col-xs-12 col-md-6">
-                      <div class="form__element"> 
-                        <div class="form__title">Nombre</div>
-                        <div class="form__input">
-                          <input type="text" name="#">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-xs-12 col-md-6">
-                      <div class="form__element"> 
-                        <div class="form__title">Email</div>
-                        <div class="form__input">
-                          <input type="text" name="#">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-xs-12 col-md-6">
-                      <div class="form__element"> 
-                        <div class="form__title">Teléfono</div>
-                        <div class="form__input">
-                          <input type="text" name="#">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-xs-12 col-md-6">
-                      <div class="form__element"> 
-                        <div class="form__title">Empresa</div>
-                        <div class="form__input">
-                          <input type="text" name="#">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-xs-12">
-                      <div class="form__element"> 
-                        <div class="form__title">Mensaje</div>
-                        <div class="form__input">
-                          <textarea name="#"></textarea>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-xs-12">
-                      <div class="form__buttons">
-                        <button class="btn">Enviar mensaje</button>
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <!--section.section--contact.section--white
+      .section__wrap.section--sm
+      	.section__body
+      		.section__content
+      			h1.h2.section__title Contáctanos
+      			p: +lorem(15)
+      			.section__form 
+      
+      				form(action="#")
+      					.cols
+      						.col-xs-12.col-md-6
+      							.form__element 
+      								.form__title Nombre
+      								.form__input
+      									input(type="text" name="#")
+      						.col-xs-12.col-md-6
+      							.form__element 
+      								.form__title Email
+      								.form__input
+      									input(type="text" name="#")
+      						.col-xs-12.col-md-6
+      							.form__element 
+      								.form__title Teléfono
+      								.form__input
+      									input(type="text" name="#")
+      						.col-xs-12.col-md-6
+      							.form__element 
+      								.form__title Empresa
+      								.form__input
+      									input(type="text" name="#")
+      						
+      						.col-xs-12
+      							.form__element 
+      								.form__title Mensaje
+      								.form__input
+      									textarea(name="#")
+      						
+      
+      						.col-xs-12
+      							.form__buttons
+      								button.btn Enviar mensaje
+      -->
     </div>
     <footer>
       <div class="footer__wrap"> 
@@ -685,8 +694,7 @@
             <div class="col-md-4">
               <div class="footer__info">
                 <div class="footer__logo"><img src="img/icons/logo-remates-white.png"></div>
-                <p class="footer__description">Ornare per litora nostra class feugiat suspendisse netus donec inceptos proin ullamcorper nec sociosqu lacinia.
-                </p>
+                <p class="footer__description">Plataforma de remate online potente, flexible y fácil de usar. Lleva tus subastas al siguiente nivel con RematePro.</p>
                 <div class="footer__socials"> 
                   <div class="footer__social"><a href="#" class="btn btn--min btn--white"><span class="fa fa-whatsapp"></span></a></div>
                   <div class="footer__social"><a href="#" class="btn btn--min btn--white"><span class="fa fa-linkedin"></span></a></div>
@@ -697,17 +705,17 @@
               <div class="footer__links"> 
                 <h4 class="footer__title">Servicios</h4>
                 <ul>
-                  <li><a href="#">Categoría 1</a></li>
-                  <li><a href="#">Categoría 2</a></li>
-                  <li><a href="#">Categoría 3</a></li>
-                  <li><a href="#">Categoría 4</a></li>
-                  <li><a href="#">Categoría 5</a></li>
+                  <li><a href="#">Inicio</a></li>
+                  <li><a href="#">Características</a></li>
+                  <li><a href="#">VS</a></li>
+                  <li><a href="#">Integraciones</a></li>
+                  <li><a href="#">Precios</a></li>
                 </ul>
               </div>
             </div>
             <div class="col-md-4">
               <div class="footer__links"> 
-                <h4 class="footer__title">Recursos</h4>
+                <h4 class="footer__title">Resit</h4>
                 <ul>
                   <li><a href="#">Quienes somos</a></li>
                   <li><a href="#">Trabaja con nosotros</a></li>
